@@ -20,6 +20,6 @@ public class BaseClass {
         driver.manage().window().maximize();
         Thread.sleep(1000);
         //visit
-      driver.get("https://myalice-automation-test.netlify.app/");
+         driver.get("https://myalice-automation-test.netlify.app/");
     }
   }

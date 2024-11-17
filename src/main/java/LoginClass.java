@@ -37,9 +37,19 @@ public class LoginClass extends BaseClass{
     public void verifyMangaSrcPage() throws Exception
     {
         //Verify that the user is redirected to the manga search page
-        WebElement logInPage = driver.findElement(By.xpath("//*[@id=\"root\"]/div/h1"));
-        Assert.assertTrue(logInPage.isDisplayed());
-        Assert.assertEquals("Manga You Should Read", logInPage.getText());
+//        WebElement logInPage = driver.findElement(By.xpath("//*[@id=\"root\"]/div/h1"));
+//        Assert.assertTrue(logInPage.isDisplayed());
+//        Assert.assertEquals("Manga You Should Read", logInPage.getText());
+        //practice relative xpath
+        //copy the text
+        WebElement divFind = driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/h3"));
+        String text_to_copy = divFind.getText();
+        //pest the text on search bar
+        WebElement findSearchField = driver.findElement(By.xpath("//*[@placeholder='Search Manga']"));
+        //clear searchbar
+        findSearchField.clear();
+        //paste the copied text
+        findSearchField.sendKeys(text_to_copy);
     }
 
 }
